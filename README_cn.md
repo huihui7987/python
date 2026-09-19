@@ -1,175 +1,274 @@
-# 🐍 FlyPython - LLM Agent 与 AI 开发中心
+# FlyPython：用 AI 编码 Agent 把 Python 真正交付
 
-[python.flypython.com](https://python.flypython.com)
+用 AI 编码 Agent 把 Python 真正交付——真实项目；Agent 负责敲键盘，
+`verify.py` 决定你什么时候算完成。
+[![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
+[![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
+[![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)
 
-## 🤖 LLM Agent Python - 核心重点
+[English](README.md) · [中文](README_cn.md) · [🌐 官方在线门户](https://flypython.com)
 
-### 🚀 主流 LLM Agent 框架
+> **带客观验证的挑战课程。** 从 [`courses/`](courses/) 挑一个文件夹，把
+> `TASK.md` 中的契约交给你的编码 Agent 去解决，并用 `verify.py` 证明结果——
+> 它会在每个检查点打印一个认领码。想要有人带？`COURSE.md` 仍支持 Agent
+> 授课模式，[`paths/`](paths/README.md) 则把课程串成徽章路线。可继续在
+> [flypython.com](https://flypython.com/) 上学习。
 
-#### **OpenAI Agents SDK**
-- [OpenAI Agents Python 文档](https://openai.github.io/openai-agents-python/) - 官方 OpenAI Agents SDK，用于构建 Python 智能体
-- [OpenAI Agents SDK 快速开始](https://openai.github.io/openai-agents-python/quickstart/) - 官方快速上手指南
-- [OpenAI Python 库](https://github.com/openai/openai-python) - 官方 OpenAI Python 客户端
-- [OpenAI Developer Resources](https://developers.openai.com/resources) - OpenAI 官方开发资源入口
+FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把代码变成用户可以依赖的
+产品。这里同时提供 AI Coding 方法、任务 Playbook、可运行示例、复用模板，以及 API、
+自动化、Agent、Skill 和 MCP 的一手资料。
 
-#### **CrewAI - 多智能体系统**
-- [CrewAI 框架](https://github.com/joaomdmoura/crewAI) - 用于协调角色扮演、自主 AI 智能体的框架
-- [CrewAI 文档](https://docs.crewai.com/) - 官方 CrewAI 文档
-- [CrewAI 示例](https://github.com/crewAIInc/crewAI-examples) - 官方示例项目
-- [使用 CrewAI 学习 Agentic AI](https://github.com/panaversity/learn-agentic-ai) - 综合学习资源
+这不是初学者链接合集。目标是帮助你从“Agent 写出了代码”走到“用户结果已经验证”。本仓库
+维护经过审核的源内容与数据，[flypython.com](https://flypython.com/) 把固定版本呈现为更适合
+阅读和发现的学习体验。
 
-#### **LangGraph - 高级智能体工作流**
-- [LangGraph](https://github.com/langchain-ai/langgraph) - 使用 LLM 构建有状态的多角色应用
-- [LangChain Agent 教程](https://python.langchain.com/docs/tutorials/) - LangChain Agent 与工具调用教程
+## 当前状态
 
-#### **AutoGen - 对话式 AI 智能体**
-- [Microsoft AutoGen](https://github.com/microsoft/autogen) - 多智能体对话框架
+截至 2026-09-19，`master` 为 `39a3e79be939f491ac3c779494bf5c655c5588a0`，
+包版本为 `0.1.1`。该提交位于不可变标签 `v0.1.1` 之后，加入 learner verifier v2：
+测试关卡必须通过，自报关卡必须用 `--attest` 显式确认。FlyPython.com 固定并在生产环境
+交付此提交。这只能证明发布与交付，不证明学习效果或付费需求；网站的真实付款和邮件运营
+仍有独立验收关卡。
 
-#### **Agent 开发基础设施**
-- [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) - Claude 官方工具调用与 Agent 工作流指南
-- [Google Agent Development Kit](https://google.github.io/adk-docs/) - Google 官方 Agent Development Kit 文档
-- [Model Context Protocol](https://modelcontextprotocol.io/introduction) - 连接模型、工具与外部上下文的开放协议
-- [PydanticAI](https://ai.pydantic.dev/) - Pydantic 团队推出的类型安全 Python Agent 框架
-- [Mastra 文档](https://mastra.ai/docs) - 带工作流、评测和可观测性的 Agent 框架
-- [Dapr Python SDK](https://github.com/dapr/python-sdk) - 分布式与有状态 Python 服务组件
+## 3 分钟开始
 
-### 🛠️ 开源 LLM Agent 项目
+你需要一个能执行命令并联网的编码 Agent（Claude Code、Codex 应用、
+Cursor、DeepSeek Harness、Kimi Code 或 ZCode——只能聊天的网页 AI 做
+不了这些课程）。在你的 Agent 里装上
+[FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md)，
+然后粘贴这一句话：
 
-#### **极简与教育性项目**
-- [min-agent](https://github.com/zhouzaida/min-agent) - 极简 200 行 LLM Agent，用于理解智能体原理
-- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - 带 Python REPL 和搜索的 ReAct 智能体
-- [开源 LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - 开源 ReAct 实现参考
+> Read https://flypython.com/skills/flypython/SKILL.md and start the FlyPython course `da-eda`.
 
-#### **生产就绪框架**
-- [SuperModels](https://github.com/JohannesVC/SuperModels) - 具有反思机制的 LLM 智能体桌面应用
-- [AgentKit](https://github.com/japanvik/agentkit) - 面向分布式 Agent 的轻量工具集
+Agent 会用一次性授权链接为你授权（你不用把密码交给它），自己取回
+课程文件——你不下载任何东西——并陪你完成挑战。还没用过编码 Agent？
+从*你的*工具对应的工具课开始：[Claude Code 实战](courses/hands-on-python-with-claude-code/COURSE_cn.md)、
+[Codex 应用](courses/hands-on-with-openai-codex/COURSE_cn.md)、[Cursor](courses/hands-on-with-cursor/COURSE_cn.md)、
+[DeepSeek Harness](courses/hands-on-with-deepseek-harness/COURSE_cn.md)、
+[Kimi Code](courses/hands-on-with-kimi-code/COURSE_cn.md)、
+[ZCode](courses/hands-on-with-zcode/COURSE_cn.md)。
 
-### 📚 LLM Agent 学习资源
+维护者仍然可以不借助任何 Agent 在本地复现示例：
 
-#### **综合指南**
-- [OpenAI Cookbook](https://cookbook.openai.com/) - OpenAI 官方示例与实践集合
-- [Prompt 优化指南](https://cookbook.openai.com/examples/optimize_prompts) - OpenAI 的提示词优化工作流
+```bash
+git clone https://github.com/flypythoncom/python.git
+cd python
+python examples/product-slug/verify.py starter --expect-failure
+python examples/product-slug/verify.py solution
+```
 
-#### **课程与教程**
-- [Agentic AI 开发课程](https://github.com/panaversity/learn-agentic-ai) - 完整的 Agentic AI 学习仓库
-- [Python 人工智能和机器学习](https://realpython.com/learning-paths/machine-learning-python/) - Python AI 学习路径
+## 验证并记录课程进度
 
-## 📖 Python 学习与开发
+在课程文件夹里，每次修改后运行 `python verify.py`。它只测试 `starter/`：
+`[open]` 表示任务未完成，`[passed]` 会给出认领码，`[pending]` 是需要
+本人回答课后问题的自报检查点。回答后运行 `python verify.py --attest l01`
+（每个已完成的自报检查点分别确认），取得 `[attested]` 认领码。只通过
+Agent 或工作台提交 `[passed]` 和 `[attested]` 的码。`check --json` 是
+版本化的 v2 接口；`progress --json` 只为旧版签名回执集成保留。
 
-### 🎯 快速导航
+## 选择你现在要完成的事
 
-1. [Python 新闻](#python-新闻)
-2. [Python 书籍](#python-书籍)
-3. [课程](#课程)
-4. [算法与数据结构](#算法)
-5. [Web 开发](#web-开发)
-6. [数据科学与分析](#数据科学)
-7. [自动化与机器人](#自动化与机器人)
-8. [金融与交易](#金融与交易)
-9. [性能优化](#性能优化)
+| 目标 | 从这里开始 | 最终产出 |
+| --- | --- | --- |
+| 解题式动手实战 | [挑战课程](courses/) · [学习路线](paths/README.md) | 一个通过验证的项目 + `verify.py` 的检查点认领码 |
+| 安全地编写和修改 Python | [AI Coding 工作方法](guides/ai-coding/workflow_cn.md) | 上下文明确、有证据的边界修改 |
+| 把 Python 变成可靠产品 | [产品质量指南](guides/python-engineering/product-quality_cn.md) | 可测试、可观测、可回退的产品路径 |
+| 完成反复出现的工程任务 | [Playbook](playbooks/README_cn.md) | Bug 修复、API 修改、外部集成、依赖升级或发布 |
+| 动手练习而不只是阅读 | [可运行示例](examples/README_cn.md) | 包含失败 starter 与验证通过 solution 的本地实战项目 |
+| 给 Agent 更好的上下文与指令 | [模板](templates/README_cn.md) | 任务契约、计划、IDE 规则、Review 与验证记录 |
+| 构建 Agent、Skill、MCP、API 或自动化 | [已审核资料目录](#浏览经过审核的一手资料) | 适合当前用途的一手资料路径 |
+| 发现近期值得关注的 Python 项目 | [Project Radar 审核队列](catalog/projects/README.md) | 经维护者审核、带证据的项目短名单 |
 
----
+工作循环很简单：定义用户结果、检查真实上下文、完成最小可测试修改、验证行为、审查副作用，
+并记录尚未验证的部分。AI 可以加速这个循环，但不能替代工程判断。
 
-### Python 新闻
+希望按路径阅读并持续获得更新，可以继续前往
+[flypython.com](https://flypython.com/)。仓库仍然是可检查的源内容，网站帮助你选择下一步。
 
-- [Python 官方](https://www.python.org/)
-- [Python Insider](https://blog.python.org/)
-- **Reddit 社区：**
-  - [r/Python](https://www.reddit.com/r/Python/)
-  - [r/learnpython](https://www.reddit.com/r/learnpython/)
-  - [r/pythontips](https://www.reddit.com/r/pythontips/)
-  - [r/pythoncoding](https://www.reddit.com/r/pythoncoding)
+## 面向 AI 智能体与 LLM
 
-### Python 书籍
+如果你是 LLM 智能体或 AI 编程助手（Cursor、Windsurf、Claude Code、Copilot、Perplexity）：
+- 快速读取结构化仓库索引：[`llms.txt`](llms.txt) 或 [`catalog.json`](catalog.json)
+- 通用 IDE 行为守则模板：[`templates/AGENT_RULES.example_cn.md`](templates/AGENT_RULES.example_cn.md)
+- 机器可读内容清单：[`content-manifest.json`](content-manifest.json)
+- 官网无噪纯文本知识汇总：`https://flypython.com/llms-full.txt`
 
-#### **初学者**
-- **Python 编程从入门到实践** (第 3 版, 2023)
-  - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
-- **Python 编程入门** (第 4 版)
-  - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
-- **Python 编程快速上手：让繁琐工作自动化** (第 2 版)
-  - [免费在线](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
+## 浏览经过审核的一手资料
 
-#### **高级 Python**
-- **Python Cookbook：掌握 Python 3 的秘诀**
-  - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
-- **Effective Python：编写高质量 Python 代码的 90 个建议** (第 2 版)
-  - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
-- **Python 代码整洁之道**
-  - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
+先选择一条学习路径，再打开符合当前目标的官方资料。目录会说明每项资源为什么被收录、
+适合什么阶段，以及需要关注的访问条件和安全边界。
 
-### 课程
+<!-- catalog-index:start -->
+<!-- Generated by tools/render_readmes.py; edit catalog/ instead. -->
+> **33 条已审核资源** · 最近整体审核：2026-09-06 · 25 条进阶或高级资源 · 一手来源优先
 
-#### **初学者课程**
-- [Python for Everybody](https://www.coursera.org/specializations/python)
-- [Python 3 编程](https://www.coursera.org/specializations/python-3-programming)
+### 选择学习路径
 
-#### **高级学习**
-- [Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) - 专业 Flask 开发
-- [yfinance 文档](https://ranaroussi.github.io/yfinance/) - Yahoo Finance Python 数据接口官方文档
+- [**Python 基础**](#path-foundations) — 掌握语言基础、环境、依赖、类型与测试，为可靠的 Python 项目打好根基。 (8 条资源)
+- [**Web 与 API**](#path-web-apis) — 构建有类型约束的服务和应用，把 Python 逻辑连接到用户与其他系统。 (7 条资源)
+- [**自动化**](#path-automation) — 把重复工作变成可维护的脚本、浏览器工作流和数据管道。 (7 条资源)
+- [**AI Agent**](#path-ai-agents) — 理解工具调用、结构化输出、状态、评测以及 Agent 系统的安全边界。 (11 条资源)
 
-### 算法
+<a id="path-foundations"></a>
+### Python 基础
 
-- [Python 交互式编程面试挑战](https://github.com/donnemartin/interactive-coding-challenges) - 算法和数据结构
-- [算法：Python 中的最小示例](https://github.com/keon/algorithms) - 数据结构和算法
-- [Pygorithm](http://pygorithm.readthedocs.io/en/latest) - 学习算法的有趣方式
+掌握语言基础、环境、依赖、类型与测试，为可靠的 Python 项目打好根基。
 
-### Web 开发
+| 资源 | 为什么值得看 | 难度与语言 | 访问与风险 | 审核日期 |
+| --- | --- | --- | --- | --- |
+| [The Python Tutorial](https://docs.python.org/3/tutorial/)<br><sub>官方文档 · 精选</sub> | Python 官方入门教程，覆盖语法、数据结构、模块、异常、类与标准库。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [venv — Creation of virtual environments](https://docs.python.org/3/library/venv.html)<br><sub>官方文档</sub> | Python 标准库的虚拟环境参考，说明如何创建隔离环境及其运行方式。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)<br><sub>官方文档</sub> | PyPA 官方教程，覆盖项目结构、构建元数据、分发包与 Python 包发布。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [uv documentation](https://docs.astral.sh/uv/)<br><sub>官方项目 · 精选</sub> | 现代 Python 工作流，统一管理版本、虚拟环境、依赖、锁文件和项目命令。 | 所有阶段<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [pytest documentation](https://docs.pytest.org/en/stable/)<br><sub>官方项目</sub> | pytest 官方指南，覆盖测试发现、断言、fixture、参数化和可维护测试套件。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Python typing documentation](https://typing.python.org/en/latest/)<br><sub>官方文档</sub> | Python 类型系统规范、指南与类型标注实践的权威入口。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Ruff documentation](https://docs.astral.sh/ruff/)<br><sub>官方项目 · 精选</sub> | 极速的 Rust 驱动 Python 代码检查与格式化工具，统一替代 Flake8、Black 与 isort。 | 所有阶段<br>英语 | 无需 API Key<br>低风险 | 2026-09-02 |
+| [Mypy documentation](https://mypy.readthedocs.io/en/stable/)<br><sub>官方项目</sub> | Python 官方与社区主流的静态类型检查器，在运行前拦截类型错误并验证代码契约。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-02 |
 
-#### **FastAPI**
-- [FastAPI 文档](https://fastapi.tiangolo.com/) - 现代、快速的 API 构建 Web 框架
-- [FastAPI 最佳实践](https://github.com/zhanymkanov/fastapi-best-practices)
+<a id="path-web-apis"></a>
+### Web 与 API
 
-#### **Flask**
-- [Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
-- [使用 Python 和 Flask 开发 RESTful API](https://auth0.com/blog/developing-restful-apis-with-python-and-flask)
-- [Flask 与代码质量](https://flake8.pycqa.org/en/latest/user/error-codes.html)
+构建有类型约束的服务和应用，把 Python 逻辑连接到用户与其他系统。
 
-#### **Django**
-- [Django 完全初学者指南 - 第 1 部分](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
-- [Django REST framework 快速入门](https://www.django-rest-framework.org/tutorial/quickstart/)
+| 资源 | 为什么值得看 | 难度与语言 | 访问与风险 | 审核日期 |
+| --- | --- | --- | --- | --- |
+| [FastAPI documentation](https://fastapi.tiangolo.com/)<br><sub>官方文档 · 精选</sub> | 从带类型的 Python 函数出发，构建具备验证、测试和自动文档的 API。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Django documentation: First steps](https://docs.djangoproject.com/en/stable/intro/tutorial01/)<br><sub>官方文档</sub> | Django 官方入门路径，覆盖项目、模型、视图、模板、表单、测试和可复用应用。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Flask documentation](https://flask.palletsprojects.com/en/stable/)<br><sub>官方文档</sub> | Flask 官方参考与教程，覆盖应用、请求、模板、测试和部署。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Pydantic documentation](https://pydantic.dev/docs/validation/latest/get-started/)<br><sub>官方文档</sub> | 在 Python 系统边界验证不可信数据、定义类型契约的官方指南。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [HTTPX documentation](https://www.python-httpx.org/)<br><sub>官方项目</sub> | 同步与异步 HTTP 客户端、超时、流式响应和传输控制的官方参考。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/20/)<br><sub>官方项目</sub> | Python 权威的 SQL 工具包与对象关系映射器（ORM），提供类型安全的数据持久化与访问。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-02 |
+| [Alembic documentation](https://alembic.sqlalchemy.org/en/latest/)<br><sub>官方项目</sub> | 基于 SQLAlchemy 的数据库迁移事实标准工具，提供事务性架构演进与版本回滚支持。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-09-02 |
 
-### 数据科学
+<a id="path-automation"></a>
+### 自动化
 
-#### **NumPy**
-- [从 Python 到 NumPy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
-- [探索 Python 包中的行长度](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages)
+把重复工作变成可维护的脚本、浏览器工作流和数据管道。
 
-#### **Matplotlib**
-- [Matplotlib 剖析](https://github.com/matplotlib/AnatomyOfMatplotlib)
+| 资源 | 为什么值得看 | 难度与语言 | 访问与风险 | 审核日期 |
+| --- | --- | --- | --- | --- |
+| [pathlib — Object-oriented filesystem paths](https://docs.python.org/3/library/pathlib.html)<br><sub>官方文档</sub> | 使用可读、跨平台的对象式路径完成文件与目录自动化的标准库参考。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [subprocess — Subprocess management](https://docs.python.org/3/library/subprocess.html)<br><sub>官方文档</sub> | 启动进程、捕获输出、处理失败并避免不安全 shell 用法的标准库契约。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Playwright for Python](https://playwright.dev/python/docs/intro)<br><sub>官方文档</sub> | 可靠浏览器自动化、定位器、断言、追踪和隔离上下文的 Python 官方指南。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Scrapy tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)<br><sub>官方文档</sub> | 爬虫结构、数据提取、item pipeline、持久化与负责任运行的官方入门。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [pandas getting started guides](https://pandas.pydata.org/docs/getting_started/index.html)<br><sub>官方文档</sub> | 表格数据读取、清洗、转换、分析和导出的官方入门入口。 | 入门<br>英语 | 无需 API Key<br>低风险 | 2026-08-31 |
+| [Polars documentation](https://docs.pola.rs/)<br><sub>官方项目</sub> | 基于 Apache Arrow 和 Rust 构建的极速 DataFrame 库，专为并行计算与现代数据管道优化。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-02 |
+| [DuckDB Python API documentation](https://duckdb.org/docs/api/python/overview)<br><sub>官方项目</sub> | 进程内高性能分析型 SQL 引擎，适用于自动化数据转换、Parquet 文件快速查询与嵌入式分析。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-02 |
 
-#### **数据分析项目**
-- [探索美国警务数据](https://blog.patricktriest.com/police-data-python)
-- [用 pandas 制作成绩册](https://realpython.com/pandas-project-gradebook/)
-- [FiveThirtyEight 风格图表](https://matplotlib.org/stable/gallery/style_sheets/fivethirtyeight.html)
-- [亚马逊产品评论分析](http://minimaxir.com/2017/01/amazon-spark)
+<a id="path-ai-agents"></a>
+### AI Agent
 
-### 自动化与机器人
+理解工具调用、结构化输出、状态、评测以及 Agent 系统的安全边界。
 
-#### **网页抓取**
-- [Scrapy 教程](https://docs.scrapy.org/en/latest/intro/tutorial.html)
-- [高级网页抓取：绕过 403 禁止](http://sangaline.com/post/advanced-web-scraping-tutorial)
-- [掌握 Python 网页抓取](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88)
+| 资源 | 为什么值得看 | 难度与语言 | 访问与风险 | 审核日期 |
+| --- | --- | --- | --- | --- |
+| [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)<br><sub>官方文档 · 精选</sub> | 面向 Agent、工具、handoff、guardrail、session、追踪与编排的官方 Python 工具包。 | 进阶<br>英语 | 通常需要 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Pydantic AI](https://pydantic.dev/docs/ai/overview/)<br><sub>官方文档 · 精选</sub> | 以输入验证、结构化输出、工具、测试和模型可移植性为核心的类型安全 Agent 开发。 | 进阶<br>英语 | 通常需要 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br><sub>正式标准 · 精选</sub> | 连接 AI 应用、工具、数据与可复用上下文的开放协议和权威参考。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)<br><sub>官方文档</sub> | 有状态图工作流、持久执行、记忆、中断与人工审核的 Python 官方指南。 | 高级<br>英语 | 通常需要 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Google Agent Development Kit](https://adk.dev/)<br><sub>官方文档</sub> | Google 官方模块化 Agent 系统开发、评测与部署文档。 | 高级<br>英语 | 通常需要 API Key<br>检查权限与副作用 | 2026-08-31 |
+| [Instructor documentation](https://python.useinstructor.com/)<br><sub>官方项目</sub> | 基于 Pydantic 的大模型结构化输出与严格验证框架，确保工具调用与数据提取的确定性。 | 进阶<br>英语 | 通常需要 API Key<br>检查权限与副作用 | 2026-09-02 |
+| [Model Context Protocol Python SDK](https://github.com/modelcontextprotocol/python-sdk)<br><sub>官方项目</sub> | Model Context Protocol 官方 Python SDK，用于快速构建和集成标准的 MCP 工具与服务。 | 进阶<br>英语 | 无需 API Key<br>检查权限与副作用 | 2026-09-02 |
+| [MCP 2026-07-28 specification release](https://blog.modelcontextprotocol.io/posts/2026-07-28/)<br><sub>官方文档</sub> | Model Context Protocol 2026-07-28 规范的官方发布公告，说明无状态重构与破坏性变更。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-06 |
+| [MCP 2026-07-28 release candidate overview](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)<br><sub>官方文档</sub> | 官方 RC 发布说明，逐项列出 2026-07-28 的破坏性变更以及留给 SDK 维护者的迁移窗口。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-06 |
+| [Anthropic donating MCP to the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)<br><sub>官方文档</sub> | Anthropic 官方公告，宣布将 MCP 交由 Linux 基金会旗下的 Agentic AI Foundation 中立治理。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-06 |
+| [MCP under the Agentic AI Foundation](https://aaif.io/projects/model-context-protocol)<br><sub>官方项目</sub> | Agentic AI Foundation 的 MCP 项目主页，是规范开发与路线图的中立治理入口。 | 进阶<br>英语 | 无需 API Key<br>低风险 | 2026-09-06 |
 
-#### **自动化项目**
-- [使用 Twilio 和 Python 的婚礼自动化](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html)
-- [在 Medium 上寻找有趣的人](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0)
+没有找到合适的官方资料？可以[建议资源或报告错误](https://github.com/flypythoncom/python/issues/new/choose)。
+<!-- catalog-index:end -->
 
-#### **电子表格集成**
-- [Python Excel 教程：权威指南](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
-- [在 Excel 中使用 Python 进行数据分析](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
-- [Google Sheets 和 Python](https://www.youtube.com/watch?v=vISRn5qFrkM)
+## 本仓库维护什么
 
-### 金融与交易
+- 中英文第一方指南和任务 Playbook；
+- 可运行、可验证的 Python 示例与 agent 工作模板；
+- 经过审核的官方文档、正式标准与项目一手来源；
+- 确定性的 manifest、校验、导出和安全链接审计；
+- [最新 Python 项目 Radar](catalog/projects/README.md) 的人工审核入口。
 
-- [yfinance 文档](https://ranaroussi.github.io/yfinance/)
-- [使用 pandas 构建量化回测环境](https://www.quantstart.com/articles/Research-Backtesting-Environments-in-Python-with-pandas/)
-- [Alpha Vantage API 文档](https://www.alphavantage.co/documentation/)
-- [股票价格数据 - Python 金融编程](https://www.youtube.com/watch?v=2BrpKpWwT2A)
-- [分析加密货币市场](https://blog.patricktriest.com/analyzing-cryptocurrencies-python)
+网站负责展示、导航、搜索、Newsletter 和未来的付费体验，并主动同步本仓库某个固定版本；
+网站不能暗中复制或重写这里的源内容结论。
+维护者可以按照[仓库到网站的运营模型](docs/REPO_TO_WEBSITE.md)增加可衡量的下一步，但不能
+把尚未提供的产品包装成现货。
 
-### 性能优化
+## 仓库结构
 
-- [Python 每秒百万请求](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319)
-- [是的，Python 很慢，但我不在乎](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1)
-- [Python 中的记忆化](https://dbader.org/blog/python-memoization)
+```text
+catalog/
+  catalog.yml        目录状态和审核日期
+  paths.yml          中英文学习路径定义
+  resources/         每项资源一个 YAML 文件
+  projects/          最新 Python 项目的人工审核队列
+courses/              带 TASK.md 契约和 verify.py 认领码的挑战课程
+paths/                把课程串成徽章路线的学习路径
+guides/               Python 工程与 AI Coding 方法
+playbooks/            可重复任务步骤与完成标准
+examples/             带自动验证的可运行小项目
+templates/            任务、计划、Review 和验证模板
+schema/
+  *.schema.json       带版本的机器可读契约
+catalog.json         提供给网站使用的确定性公开导出
+radar.json            提供给网站使用的确定性 Project Radar 导出
+content-manifest.json 网站使用的版本、路径、摘要与校验值
+tools/                生成、校验、示例和链接审计工具
+tests/                内容一致性与行为测试
+docs/                 消费方契约和策展政策
+```
+
+`catalog.json` 和 `content-manifest.json` 都由工具生成，不能手工修改。网站应从完整
+commit SHA 读取两份导出、校验文件摘要，并在自己的锁文件中记录该版本；生产构建不能
+直接追随持续变化的分支。
+
+固定版本地址示例：
+
+```text
+https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.json
+```
+
+内容 manifest 让 flypython.com 可以渲染对应的中英文指南或 Playbook，而不用维护第二份
+可编辑副本。项目推荐在维护者完成源码、维护状态、许可证、发布、安全与实际用户价值审核前
+保持为空，不用 AI 生成推荐理由来填充栏目。
+
+## 本地校验
+
+使用 `.python-version` 指定的 Python，并安装锁定的开发依赖：
+
+```bash
+# 推荐：使用 uv 极速安装与测试
+uv venv
+uv pip install -r requirements-dev.lock.txt
+uv run pytest
+
+# 或使用标准 pip：
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.lock.txt
+pytest
+```
+
+运行与 CI 相同的确定性校验：
+
+```bash
+python -m pytest
+python tools/validate_catalog.py
+python tools/export_catalog.py --check --target both
+python tools/render_readmes.py --check
+python tools/build_content_manifest.py --check
+python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
+```
+
+修改源内容后重新生成：
+
+```bash
+python tools/export_catalog.py
+python tools/render_readmes.py
+python tools/build_content_manifest.py
+```
+
+网络链接检查不会在 Pull Request 中运行，而是由维护者通过定时或手动的
+**Catalog link audit** 工作流执行。
+
+提交资源或修改分类前，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 和
+[策展政策](docs/CURATION_POLICY.md)。网站接入还应遵循
+[消费方契约](docs/CONSUMING.md)。

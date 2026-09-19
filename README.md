@@ -1,175 +1,292 @@
-# 🐍 FlyPython - LLM Agent & AI Development Hub
+# FlyPython: Learn to ship Python with AI coding agents
 
-[python.flypython.com](https://python.flypython.com)
+Learn to ship Python with AI coding agents — real projects; your agent does
+the typing, `verify.py` decides when you're done.
+[![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
+[![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
+[![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)
 
-## 🤖 LLM Agent Python - Core Focus
+[English](README.md) · [中文](README_cn.md) · [🌐 Online Portal](https://flypython.com)
 
-### 🚀 Leading LLM Agent Frameworks
+> **Challenge courses with objective verification.** Pick a folder from
+> [`courses/`](courses/), solve the contract in `TASK.md` with your coding
+> agent as the tool, and prove it with `verify.py` — which prints a claim
+> code per checkpoint. Prefer a guided path? `COURSE.md` still runs an
+> agent-taught mode, and [`paths/`](paths/README.md) sequences courses into badge
+> routes. Continue on [flypython.com](https://flypython.com/).
 
-#### **OpenAI Agents SDK**
-- [OpenAI Agents Python Documentation](https://openai.github.io/openai-agents-python/) - Official OpenAI Agents SDK for building Python agents
-- [OpenAI Agents SDK Quickstart](https://openai.github.io/openai-agents-python/quickstart/) - Official quickstart guide
-- [OpenAI Python Library](https://github.com/openai/openai-python) - Official OpenAI Python client
-- [OpenAI Developer Resources](https://developers.openai.com/resources) - Official OpenAI development resource hub
+FlyPython is a practical, bilingual repository for writing good Python and
+turning it into products people can rely on. It combines AI-coding methods,
+task playbooks, runnable examples, reusable templates, and reviewed primary
+sources for APIs, automation, agents, Skills, and MCP.
 
-#### **CrewAI - Multi-Agent Systems**
-- [CrewAI Framework](https://github.com/joaomdmoura/crewAI) - Framework for orchestrating role-playing, autonomous AI agents
-- [CrewAI Documentation](https://docs.crewai.com/) - Official CrewAI documentation
-- [CrewAI Examples](https://github.com/crewAIInc/crewAI-examples) - Official example projects
-- [Learn Agentic AI with CrewAI](https://github.com/panaversity/learn-agentic-ai) - Broad CrewAI learning resources
+It is not a beginner link dump. The goal is to help you move from “the agent
+wrote code” to “a user outcome is verified.” The repository owns the reviewed
+source content and data; [flypython.com](https://flypython.com/) turns pinned
+versions into a browsable learning experience.
 
-#### **LangGraph - Advanced Agent Workflows**
-- [LangGraph](https://github.com/langchain-ai/langgraph) - Build stateful, multi-actor applications with LLMs
-- [LangChain Agent Tutorials](https://python.langchain.com/docs/tutorials/) - Official agent and tool-calling tutorials
+## Current status
 
-#### **AutoGen - Conversational AI Agents**
-- [Microsoft AutoGen](https://github.com/microsoft/autogen) - Multi-agent conversation framework
+As of 2026-09-19, `master` is `39a3e79be939f491ac3c779494bf5c655c5588a0`
+and the package version is `0.1.1`. This commit follows the immutable `v0.1.1`
+tag and adds learner verifier v2: tests must pass and reflection checkpoints
+must be explicitly confirmed with `--attest`. FlyPython.com pins this exact
+commit and serves it in production. That proves release delivery, not learner
+outcomes or paid demand; the website's payment and email operations still have
+separate acceptance gates.
 
-#### **Agent Development Infrastructure**
-- [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) - Official guide to tool calling and agent workflows
-- [Google Agent Development Kit](https://google.github.io/adk-docs/) - Official Google ADK docs
-- [Model Context Protocol](https://modelcontextprotocol.io/introduction) - Open protocol for connecting models to tools and external context
-- [PydanticAI](https://ai.pydantic.dev/) - Type-safe Python agent framework
-- [Mastra Docs](https://mastra.ai/docs) - Agent framework with workflows, evals, and observability
-- [Dapr Python SDK](https://github.com/dapr/python-sdk) - Building blocks for distributed and stateful Python services
+## Start in three minutes
 
-### 🛠️ Open Source LLM Agent Projects
+You need a coding agent that can run commands and reach the network
+(Claude Code, the Codex app, Cursor, DeepSeek Harness, Kimi Code, or
+ZCode — chat-only web AIs cannot run these courses). Install the
+[FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md) in
+your agent, then paste this one sentence:
 
-#### **Minimal & Educational**
-- [min-agent](https://github.com/zhouzaida/min-agent) - Minimal 200-line LLM agent for understanding core principles
-- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - ReAct agent with Python REPL and search
-- [OpenSource LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - Open-source ReAct implementation references
+> Read https://flypython.com/skills/flypython/SKILL.md and start the FlyPython course `da-eda`.
 
-#### **Production-Ready Frameworks**
-- [SuperModels](https://github.com/JohannesVC/SuperModels) - Desktop app for running LLM agents with reflection mechanisms
-- [AgentKit](https://github.com/japanvik/agentkit) - Lightweight toolkit for distributed agents
+The agent authorizes you with a one-time link (you never hand it a
+password), fetches the course files itself — you download nothing — and
+drives the challenges with you. New to driving an agent? Start with the
+tool course for *your* agent: [Hands-on Python with Claude Code](courses/hands-on-python-with-claude-code/COURSE.md),
+[Codex app](courses/hands-on-with-openai-codex/COURSE.md), [Cursor](courses/hands-on-with-cursor/COURSE.md),
+[DeepSeek Harness](courses/hands-on-with-deepseek-harness/COURSE.md),
+[Kimi Code](courses/hands-on-with-kimi-code/COURSE.md), or
+[ZCode](courses/hands-on-with-zcode/COURSE.md).
 
-### 📚 LLM Agent Learning Resources
+Maintainers can still reproduce an example locally without any agent:
 
-#### **Comprehensive Guides**
-- [OpenAI Cookbook](https://cookbook.openai.com/) - Official examples and production patterns
-- [Prompt Optimization Guide](https://cookbook.openai.com/examples/optimize_prompts) - Practical prompt improvement workflow
+```bash
+git clone https://github.com/flypythoncom/python.git
+cd python
+python examples/product-slug/verify.py starter --expect-failure
+python examples/product-slug/verify.py solution
+```
 
-#### **Courses & Tutorials**
-- [Agentic AI Development Course](https://github.com/panaversity/learn-agentic-ai) - Complete course repository for agentic AI
-- [Python for AI and Machine Learning](https://realpython.com/learning-paths/machine-learning-python/) - Python AI learning path
+## Verify and record a course
 
-## 📖 Python Learning & Development
+In the course folder, run `python verify.py` after each change. It tests only
+`starter/`: `[open]` means the task is unfinished, `[passed]` gives a claim
+code, and `[pending]` is a reflection checkpoint. Answer that lesson's
+questions, then run `python verify.py --attest l01` (repeat for each completed
+reflection) to get its code. Submit only `[passed]` and `[attested]` codes
+through your agent or the dashboard. `check --json` is the versioned v2
+interface; `progress --json` remains for older signed-receipt integrations.
 
-### 🎯 Quick Navigation
+## Choose what you need to accomplish
 
-1. [Python News](#python-news)
-2. [Python Books](#python-books)
-3. [Courses](#courses)
-4. [Algorithms & Data Structures](#algorithms)
-5. [Web Development](#web-development)
-6. [Data Science & Analysis](#data-science)
-7. [Automation & Bots](#automation--bots)
-8. [Finance & Trading](#finance--trading)
-9. [Performance Optimization](#performance)
+| Goal | Start here | What you will produce |
+| --- | --- | --- |
+| Learn by solving challenges | [Challenge courses](courses/) · [Learning paths](paths/README.md) | A verified project + checkpoint claim codes from `verify.py` |
+| Write and change Python safely | [AI Coding workflow](guides/ai-coding/workflow.md) | A bounded change with explicit context and evidence |
+| Turn Python into a reliable product | [Product quality guide](guides/python-engineering/product-quality.md) | A tested, observable, reversible product path |
+| Finish a recurring engineering task | [Playbooks](playbooks/README.md) | A bug fix, API change, integration, dependency upgrade, or release |
+| Practice instead of only reading | [Runnable examples](examples/README.md) | Local testable projects with failing starters and verified solutions |
+| Give an agent better instructions | [Templates](templates/README.md) | Task contracts, plans, reviews, IDE rules, and verification records |
+| Build agents, Skills, MCP, APIs, or automation | [Reviewed source catalog](#browse-the-reviewed-source-catalog) | A primary-source path selected for your use case |
+| Find current Python projects | [Project Radar review queue](catalog/projects/README.md) | An evidence-backed shortlist after maintainer review |
 
----
+The working loop is simple: define the user outcome, inspect the real context,
+make the smallest testable change, verify behavior, review side effects, and
+record what remains unverified. AI accelerates the loop; it does not replace
+engineering judgment.
 
-### Python News
+Prefer a guided reading path and ongoing updates? Continue on
+[flypython.com](https://flypython.com/). The repository remains the inspectable
+source; the website helps you choose the next useful step.
 
-- [Python Official](https://www.python.org/)
-- [Python Insider](https://blog.python.org/)
-- **Reddit Communities:**
-  - [r/Python](https://www.reddit.com/r/Python/)
-  - [r/learnpython](https://www.reddit.com/r/learnpython/)
-  - [r/pythontips](https://www.reddit.com/r/pythontips/)
-  - [r/pythoncoding](https://www.reddit.com/r/pythoncoding)
+## For AI Agents and LLMs
 
-### Python Books
+If you are an LLM agent or coding assistant (Cursor, Windsurf, Claude Code, Copilot, Perplexity):
+- Ingest repository index: [`llms.txt`](llms.txt) or [`catalog.json`](catalog.json)
+- Universal IDE rules template: [`templates/AGENT_RULES.example.md`](templates/AGENT_RULES.example.md)
+- Machine-readable manifest: [`content-manifest.json`](content-manifest.json)
+- Official web knowledge dump: `https://flypython.com/llms-full.txt`
 
-#### **For Beginners**
-- **Python Crash Course: A Hands-On, Project-Based Introduction to Programming** (3rd Edition, 2023)
-  - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
-- **Starting Out with Python** (4th Edition)
-  - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
-- **Automate the Boring Stuff with Python** (2nd Edition)
-  - [Free Online](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
+## Browse the reviewed source catalog
 
-#### **Advanced Python**
-- **Python Cookbook: Recipes for Mastering Python 3**
-  - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
-- **Effective Python: 90 Specific Ways to Write Better Python** (2nd Edition)
-  - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
-- **Clean Code in Python**
-  - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
+Choose a learning path below and open the official source that matches your
+current goal. The table explains why each source is included, who it suits, and
+which access or safety constraints deserve attention.
 
-### Courses
+<!-- catalog-index:start -->
+<!-- Generated by tools/render_readmes.py; edit catalog/ instead. -->
+> **33 reviewed resources** · Catalog reviewed 2026-09-06 · 25 intermediate or advanced · Primary sources first
 
-#### **Beginner Courses**
-- [Python for Everybody](https://www.coursera.org/specializations/python)
-- [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
+### Choose a learning path
 
-#### **Advanced Learning**
-- [REST APIs with Flask and Python](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) - Professional Flask development
-- [yfinance Documentation](https://ranaroussi.github.io/yfinance/) - Official docs for Yahoo Finance data access in Python
+- [**Python foundations**](#path-foundations) — Learn the language, environments, dependencies, typing, and tests that reliable Python work depends on. (8 resources)
+- [**Web and APIs**](#path-web-apis) — Build typed services and applications that connect Python logic to users and other systems. (7 resources)
+- [**Automation**](#path-automation) — Turn repeatable work into maintainable scripts, browser workflows, and data pipelines. (7 resources)
+- [**AI agents**](#path-ai-agents) — Learn tools, structured output, state, evaluation, and the safety boundaries of agent systems. (11 resources)
 
-### Algorithms
+<a id="path-foundations"></a>
+### Python foundations
 
-- [Interactive Python Coding Interview Challenges](https://github.com/donnemartin/interactive-coding-challenges) - Algorithms and data structures
-- [Algorithms: Minimal Examples in Python](https://github.com/keon/algorithms) - Data structures and algorithms
-- [Pygorithm](http://pygorithm.readthedocs.io/en/latest) - Fun way to learn algorithms
+Learn the language, environments, dependencies, typing, and tests that reliable Python work depends on.
 
-### Web Development
+| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
+| --- | --- | --- | --- | --- |
+| [The Python Tutorial](https://docs.python.org/3/tutorial/)<br><sub>Official docs · Featured</sub> | The primary introduction to Python syntax, data structures, modules, errors, classes, and the standard library. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [venv — Creation of virtual environments](https://docs.python.org/3/library/venv.html)<br><sub>Official docs</sub> | The standard-library reference for creating isolated Python environments and understanding their behavior. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)<br><sub>Official docs</sub> | The PyPA tutorial for project layout, build metadata, distributions, and publishing Python packages. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [uv documentation](https://docs.astral.sh/uv/)<br><sub>Official project · Featured</sub> | A modern workflow for Python versions, virtual environments, dependencies, lockfiles, and project commands. | All levels<br>English | No API key<br>Low risk | 2026-08-31 |
+| [pytest documentation](https://docs.pytest.org/en/stable/)<br><sub>Official project</sub> | The official guide to test discovery, assertions, fixtures, parametrization, and maintainable test suites. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Python typing documentation](https://typing.python.org/en/latest/)<br><sub>Official docs</sub> | The canonical home for Python's type-system specification, guides, and typing best practices. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Ruff documentation](https://docs.astral.sh/ruff/)<br><sub>Official project · Featured</sub> | An extremely fast Python linter and code formatter written in Rust, replacing Flake8, Black, isort, and more. | All levels<br>English | No API key<br>Low risk | 2026-09-02 |
+| [Mypy documentation](https://mypy.readthedocs.io/en/stable/)<br><sub>Official project</sub> | The standard static type checker for Python to catch bugs and verify type contracts before running code. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
 
-#### **FastAPI**
-- [FastAPI Documentation](https://fastapi.tiangolo.com/) - Modern, fast web framework for building APIs
-- [FastAPI Best Practices](https://github.com/zhanymkanov/fastapi-best-practices)
+<a id="path-web-apis"></a>
+### Web and APIs
 
-#### **Flask**
-- [REST APIs with Flask and Python](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
-- [Developing RESTful APIs with Python and Flask](https://auth0.com/blog/developing-restful-apis-with-python-and-flask)
-- [Flask and Code Quality](https://flake8.pycqa.org/en/latest/user/error-codes.html)
+Build typed services and applications that connect Python logic to users and other systems.
 
-#### **Django**
-- [Complete Beginner's Guide to Django - Part 1](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
-- [Django REST framework Quickstart](https://www.django-rest-framework.org/tutorial/quickstart/)
+| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
+| --- | --- | --- | --- | --- |
+| [FastAPI documentation](https://fastapi.tiangolo.com/)<br><sub>Official docs · Featured</sub> | A direct route from typed Python functions to tested APIs with validation and generated documentation. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Django documentation: First steps](https://docs.djangoproject.com/en/stable/intro/tutorial01/)<br><sub>Official docs</sub> | The official path through Django projects, models, views, templates, forms, tests, and reusable apps. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Flask documentation](https://flask.palletsprojects.com/en/stable/)<br><sub>Official docs</sub> | The maintained reference and tutorial for Flask applications, requests, templates, testing, and deployment. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Pydantic documentation](https://pydantic.dev/docs/validation/latest/get-started/)<br><sub>Official docs</sub> | The primary guide to validating untrusted data and expressing typed contracts at Python system boundaries. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [HTTPX documentation](https://www.python-httpx.org/)<br><sub>Official project</sub> | The official reference for synchronous and asynchronous HTTP clients, timeouts, streaming, and transport control. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
+| [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/20/)<br><sub>Official project</sub> | The definitive Python SQL toolkit and Object Relational Mapper, providing type-safe database access and migrations. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
+| [Alembic documentation](https://alembic.sqlalchemy.org/en/latest/)<br><sub>Official project</sub> | Database migration tool for SQLAlchemy, providing transactional schema changes and rollback support. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-09-02 |
 
-### Data Science
+<a id="path-automation"></a>
+### Automation
 
-#### **NumPy**
-- [From Python to NumPy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
-- [Exploring Line Lengths in Python Packages](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages)
+Turn repeatable work into maintainable scripts, browser workflows, and data pipelines.
 
-#### **Matplotlib**
-- [Anatomy of Matplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
+| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
+| --- | --- | --- | --- | --- |
+| [pathlib — Object-oriented filesystem paths](https://docs.python.org/3/library/pathlib.html)<br><sub>Official docs</sub> | The standard-library reference for readable, cross-platform file and directory automation. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [subprocess — Subprocess management](https://docs.python.org/3/library/subprocess.html)<br><sub>Official docs</sub> | The standard-library contract for launching processes, capturing output, handling failures, and avoiding unsafe shell usage. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
+| [Playwright for Python](https://playwright.dev/python/docs/intro)<br><sub>Official docs</sub> | The official Python guide to reliable browser automation, locators, assertions, traces, and isolated contexts. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
+| [Scrapy tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)<br><sub>Official docs</sub> | The official introduction to crawl structure, extraction, item pipelines, persistence, and responsible operation. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
+| [pandas getting started guides](https://pandas.pydata.org/docs/getting_started/index.html)<br><sub>Official docs</sub> | The primary entry point for tabular data loading, cleaning, transformation, analysis, and export. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
+| [Polars documentation](https://docs.pola.rs/)<br><sub>Official project</sub> | Lightning-fast DataFrame library built on Apache Arrow and Rust, optimized for efficient data pipelines and parallel processing. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
+| [DuckDB Python API documentation](https://duckdb.org/docs/api/python/overview)<br><sub>Official project</sub> | Fast in-process analytical SQL engine for automated data transformation, Parquet querying, and embedded analytics. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
 
-#### **Data Analysis Projects**
-- [Exploring United States Policing Data](https://blog.patricktriest.com/police-data-python)
-- [Build a Gradebook With pandas](https://realpython.com/pandas-project-gradebook/)
-- [FiveThirtyEight Style Sheet](https://matplotlib.org/stable/gallery/style_sheets/fivethirtyeight.html)
-- [Amazon Product Review Analysis](http://minimaxir.com/2017/01/amazon-spark)
+<a id="path-ai-agents"></a>
+### AI agents
 
-### Automation & Bots
+Learn tools, structured output, state, evaluation, and the safety boundaries of agent systems.
 
-#### **Web Scraping**
-- [Scrapy Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
-- [Advanced Web Scraping: Bypassing 403 Forbidden](http://sangaline.com/post/advanced-web-scraping-tutorial)
-- [Mastering Python Web Scraping](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88)
+| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
+| --- | --- | --- | --- | --- |
+| [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)<br><sub>Official docs · Featured</sub> | The official Python toolkit for agents, tools, handoffs, guardrails, sessions, tracing, and orchestration. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
+| [Pydantic AI](https://pydantic.dev/docs/ai/overview/)<br><sub>Official docs · Featured</sub> | Typed agent development built around validated inputs, structured output, tools, testing, and model portability. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
+| [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br><sub>Official standard · Featured</sub> | The open protocol and reference documentation for connecting AI applications to tools, data, and reusable context. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
+| [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)<br><sub>Official docs</sub> | The official Python guide to stateful graph workflows, durable execution, memory, interrupts, and human review. | Advanced<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
+| [Google Agent Development Kit](https://adk.dev/)<br><sub>Official docs</sub> | Google's official documentation for developing, evaluating, and deploying modular agent systems. | Advanced<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
+| [Instructor documentation](https://python.useinstructor.com/)<br><sub>Official project</sub> | Structured outputs and validation for LLMs powered by Pydantic, enabling predictable tool calling and schema enforcement. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-09-02 |
+| [Model Context Protocol Python SDK](https://github.com/modelcontextprotocol/python-sdk)<br><sub>Official project</sub> | Official Python implementation of the Model Context Protocol for building MCP servers and clients. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-09-02 |
+| [MCP 2026-07-28 specification release](https://blog.modelcontextprotocol.io/posts/2026-07-28/)<br><sub>Official docs</sub> | The official release announcement for the 2026-07-28 Model Context Protocol specification, covering the stateless redesign and breaking changes. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
+| [MCP 2026-07-28 release candidate overview](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)<br><sub>Official docs</sub> | The official release-candidate post that enumerates the 2026-07-28 breaking changes and the migration window for SDK maintainers. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
+| [Anthropic donating MCP to the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)<br><sub>Official docs</sub> | Anthropic's announcement establishing neutral Linux Foundation governance for MCP under the Agentic AI Foundation. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
+| [MCP under the Agentic AI Foundation](https://aaif.io/projects/model-context-protocol)<br><sub>Official project</sub> | The Agentic AI Foundation project page for MCP, the neutral governance home for specification development and roadmaps. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
 
-#### **Automation Projects**
-- [Wedding Automation with Twilio and Python](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html)
-- [Finding Interesting People on Medium](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0)
+Missing an important official source? [Propose a resource or report a correction](https://github.com/flypythoncom/python/issues/new/choose).
+<!-- catalog-index:end -->
 
-#### **Spreadsheets Integration**
-- [Python Excel Tutorial: The Definitive Guide](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
-- [Data Analysis with Python in Excel](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
-- [Google Sheets and Python](https://www.youtube.com/watch?v=vISRn5qFrkM)
+## What this repository owns
 
-### Finance & Trading
+- First-party bilingual guides and task playbooks.
+- Runnable, verifiable Python examples and reusable agent-work templates.
+- Reviewed official documentation, standards, and project sources.
+- Deterministic manifests, validation, exports, and safe link audits.
+- A human-review queue for the [Python Project Radar](catalog/projects/README.md).
 
-- [yfinance Documentation](https://ranaroussi.github.io/yfinance/)
-- [Research Backtesting Environments in Python with pandas](https://www.quantstart.com/articles/Research-Backtesting-Environments-in-Python-with-pandas/)
-- [Alpha Vantage API Documentation](https://www.alphavantage.co/documentation/)
-- [Stock Price Data - Python for Finance](https://www.youtube.com/watch?v=2BrpKpWwT2A)
-- [Analyzing Cryptocurrency Markets](https://blog.patricktriest.com/analyzing-cryptocurrencies-python)
+The website owns presentation, navigation, search, newsletter, and future paid
+experiences. It consumes a deliberate pinned version of this repository; it
+must not silently fork or rewrite the source claims.
+Maintainers can follow the [repository-to-website operating model](docs/REPO_TO_WEBSITE.md)
+to add measurable calls to action without inventing unavailable products.
 
-### Performance Optimization
+## Repository structure
 
-- [Million Requests per Second with Python](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319)
-- [Yes, Python is Slow, and I Don't Care](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1)
-- [Memoization in Python](https://dbader.org/blog/python-memoization)
+```text
+catalog/
+  catalog.yml        catalog status and review date
+  paths.yml          bilingual learning-path definitions
+  resources/         one reviewed resource per YAML file
+  projects/          human-review queue for current Python projects
+courses/              challenge courses with TASK.md contracts and verify.py claim codes
+paths/                learning paths sequencing courses into badge routes
+guides/               Python engineering and AI-coding methods
+playbooks/            repeatable task procedures and definitions of done
+examples/             small runnable projects with automated verification
+templates/            task, plan, review, and verification starters
+schema/
+  *.schema.json       versioned machine-readable contracts
+catalog.json         deterministic public export for consumers
+radar.json            deterministic Project Radar export for consumers
+content-manifest.json versioned paths, summaries, and checksums for the website
+tools/                generation, validation, example, and link-audit commands
+tests/                content consistency and behavior tests
+docs/                 consumer contract and curation policy
+```
+
+`catalog.json` and `content-manifest.json` are generated; do not edit them by
+hand. Website consumers read both from a pinned commit, verify checksums, and
+record that revision in their own lock file. They must not fetch a moving branch
+during a production build.
+
+Example immutable URL:
+
+```text
+https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.json
+```
+
+The content manifest lets flypython.com render the matching bilingual guide or
+playbook without owning a second editable copy. Project recommendations remain
+empty until a maintainer has reviewed source, maintenance, license, release,
+security, and practical user-value evidence.
+
+## Validate a change
+
+Use the Python version declared in `.python-version`, then install the locked
+development dependencies:
+
+```bash
+# Fast setup using uv (recommended):
+uv venv
+uv pip install -r requirements-dev.lock.txt
+uv run pytest
+
+# Or using standard pip:
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.lock.txt
+pytest
+```
+
+Run the deterministic checks:
+
+```bash
+python -m pytest
+python tools/validate_catalog.py
+python tools/export_catalog.py --check --target both
+python tools/render_readmes.py --check
+python tools/build_content_manifest.py --check
+python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
+```
+
+After changing catalog sources, regenerate the public export before running the
+checks:
+
+```bash
+python tools/export_catalog.py
+python tools/render_readmes.py
+python tools/build_content_manifest.py
+```
+
+Network link fetching is intentionally excluded from pull-request validation.
+Maintainers run it through the scheduled or manual **Catalog link audit**
+workflow.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[curation policy](docs/CURATION_POLICY.md) before proposing a resource or
+changing its classification. Website integrations should also follow the
+[consumer contract](docs/CONSUMING.md).

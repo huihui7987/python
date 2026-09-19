@@ -1,0 +1,136 @@
+# Contributing to FlyPython
+
+FlyPython maintains bilingual Python engineering guides, task playbooks,
+runnable examples, templates, and a reviewed source catalog used by
+[flypython.com](https://flypython.com/). Contributions should help a visitor
+complete a real Python task or improve factual accuracy and maintainability.
+General Python questions belong in
+[GitHub Discussions](https://github.com/flypythoncom/python/discussions).
+
+Read the [curation policy](docs/CURATION_POLICY.md) before contributing.
+
+## Permissions
+
+This repository is dual-licensed as described in [LICENSE](LICENSE): code
+(examples, tools, templates, course starters/solutions/verifiers) under the MIT
+License, and written content (guides, playbooks, lessons, catalog records,
+READMEs) under CC BY 4.0 with attribution "FlyPython (flypython.com)".
+Contributors must submit only material they have the right to submit and retain
+required third-party notices; a file's own license header, when present, wins.
+
+## Propose a change
+
+Use the matching issue form before a larger change:
+
+- **Resource proposal** for a new official source.
+- **Project proposal** for a current Python project that should receive human
+  review for Project Radar.
+- **Course feedback** for running a course or reporting a course problem.
+- **Broken link** for an unreachable or replaced resource.
+- **Security report** for a vulnerability; follow [SECURITY.md](SECURITY.md)
+  instead of opening a public issue.
+
+Small typo, metadata, or tooling fixes may go directly to a focused pull request.
+
+First-party guides and playbooks must remain practical, testable, and aligned
+in English and Chinese. A content change must update both language files with
+the same content version and review date, then regenerate
+`content-manifest.json`. Do not present generated code, a passing test, or a
+deployment command as proof of user value or production readiness.
+
+## Catalog sources
+
+The canonical source is the `catalog/` directory:
+
+- `catalog/catalog.yml` contains catalog-level review state.
+- `catalog/paths.yml` defines the four bilingual learning paths.
+- `catalog/resources/<id>.yml` contains one reviewed resource.
+- `catalog.json` is generated output and must not be edited by hand.
+
+Every resource file must include:
+
+- `id`, `path`, `order`, `title`, and `url`
+- `source_type`, `level`, and `language`
+- `why_en` and `why_zh`
+- `reviewed_on` and `status`
+- `requires_key`, `risk`, and `featured`
+
+The filename must match the stable resource ID. Resource `order` values must be
+unique and consecutive within each path.
+
+Descriptions and classifications require human review. Do not use an LLM or a
+web-search API to generate them. Prefer official documentation, official
+standards, and official project pages.
+
+A 403, 429, timeout, or transient 5xx response is not enough to delete a
+resource. Mark it for human review and provide repeatable evidence.
+
+## Local setup
+
+Install the exact Python version from `.python-version` and the locked
+development dependencies:
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.lock.txt
+```
+
+After changing catalog sources, regenerate the public export:
+
+```bash
+python tools/export_catalog.py
+python tools/render_readmes.py
+python tools/build_content_manifest.py
+```
+
+Run the same deterministic checks as CI:
+
+```bash
+python -m pytest
+python tools/validate_catalog.py
+python tools/export_catalog.py --check --target both
+python tools/render_readmes.py --check
+python tools/build_content_manifest.py --check
+python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
+```
+
+Maintainers can run the networked link audit through GitHub Actions. For a
+deliberate local audit of every catalog entry:
+
+```bash
+python tools/check_links.py --mode all --output reports/link-check.json
+```
+
+Network fetching is excluded from pull-request CI. Any review-needed result
+fails the scheduled audit for maintainer inspection, but does not by itself
+justify removing a resource.
+
+## Pull request checklist
+
+- Keep source content and generated JSON exports consistent.
+- Preserve English and Chinese meaning.
+- Include evidence for maintenance, ownership, access, and safety claims.
+- Do not call a project production-ready without current evidence.
+- Do not commit secrets, generated reports, caches, or local environments.
+- Explain consumer-visible changes and list the validation results.
+
+Passing automation does not replace editorial review. After merge, a website
+consumer must deliberately update its pinned catalog commit before the new data
+appears on flypython.com.
+
+## Release and tag rules
+
+- A pushed tag is **immutable**: never delete, move, or reuse it. `v0.1.0`
+  stays pointed at its original commit forever.
+- This repository and the website (`flypythoncom/flypython.com`) are
+  independent release artifacts. They may ship different version numbers in
+  the same release train; the compatibility mapping is recorded in both
+  CHANGELOGs and in the GitHub Releases (e.g. website `v0.1.0` ↔ repository
+  `v0.1.1`), each naming the exact commit SHA.
+- The website consumes this repository at a pinned full commit SHA
+  (`content-pin.json`) — never a moving branch or tag.
+- `pyproject.toml` `version` tracks the repository release; bump it in the
+  change that cuts the release.

@@ -1,14 +1,3 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Ruby
-Gemfile.lock
-.bundle/
-vendor/
-
 # OS
 .DS_Store
 .DS_Store?
@@ -46,8 +35,20 @@ temp/
 .tmp/
 
 # Python
+.venv/
+venv/
 __pycache__/
 *.pyc
 
 # Generated reports
 reports/
+
+# Course scenario output written by learners running report_tool.py
+courses/*/scenario/*/report.json
+courses/*/scenario/*/report.json.tmp
+courses/*/out/
+paths/*/capstone/out/
+courses/*/scenario/*/results.json
+
+# Test caches
+.pytest_cache/
